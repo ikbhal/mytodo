@@ -21,6 +21,9 @@ defmodule MytodoWeb.Router do
     get "/todos/new", TodoController, :new
     post "/todos", TodoController, :create
     get "/todos/:id", TodoController, :show
+    get "/todos/:id/edit", TodoController, :edit
+    post "/todos/:id", TodoController, :update
+    delete "/todos/:id", TodoController, :delete
   end
 
   # Other scopes may use custom stacks.

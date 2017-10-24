@@ -10,7 +10,9 @@
 		<td>
 			<%= todo.id%>,
 			<%= todo.name%>,
-			<%= link todo.name, to: todo_path(@conn, :show, todo.id)%>
+			<%= link "show", to: todo_path(@conn, :show, todo.id)%>
+			<%= link "edit", to: todo_path(@conn, :edit, todo.id)%>
+			<%= link "delete", to: todo_path(@conn, :delete, todo.id), method: "delete" %>
 		</td>
 	</tr>
 	<% end %>

@@ -1,5 +1,10 @@
 # Mytodo
-
+Todo app,
+You can do following things
+1)Add todo
+2)list todo
+3)view each todo
+4)Edit todo need to be done
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
