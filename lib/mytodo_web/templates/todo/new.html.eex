@@ -1,0 +1,12 @@
+<div class="jumbotron">
+	<p>Add  Todo Form</p>
+	<%= form_for @changeset, todo_path(@conn, :create), fn f -> %>
+	  <div class="form-group">
+	  	<input type="hidden" name="csrf_token" value="<%= csrf_token(@conn) %>">
+			<%= label :todo, :name, class: "control-label" %>
+			</label>
+			<%= text_input f, :name, class: "form-control" %>
+		</div>
+		<%= submit "Submit", class: "btn btn-default" %>
+	<% end %>
+</div>

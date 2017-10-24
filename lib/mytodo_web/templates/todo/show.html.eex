@@ -1,0 +1,7 @@
+<div class="jumbotron">
+	<p>
+		<%= @todo.id %>
+		<%= @todo.name %>
+	</p>
+	<%= link "Back", to: todo_path(@conn, :index) %>
+</div>

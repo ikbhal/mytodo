@@ -1,0 +1,17 @@
+<div><%= link "Add todo", to: todo_path(@conn, :new) %></div>
+<br/>
+<div>List of todos</div>
+<table>
+	<thead>
+		<th>Name</th>
+	</thead>
+	<%= for todo <- @todos do %>
+	<tr>
+		<td>
+			<%= todo.id%>,
+			<%= todo.name%>,
+			<%= link todo.name, to: todo_path(@conn, :show, todo.id)%>
+		</td>
+	</tr>
+	<% end %>
+</table>
