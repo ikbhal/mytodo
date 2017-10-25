@@ -39,9 +39,13 @@ defmodule MytodoWeb.TodoController do
     |> render("edit.html")
   end
 
-  def update(conn, _params) do
-    conn
-    |> text("will update todo")
+  def update(conn, %{"id" => id , "todo" => %{ "name" => name} }) do
+    {id, _} = Integer.parse(id)
+    todo = Repo.get(Todo, id)
+    todo
+    |> Todo.changeset(%{name: name})
+    |> Repo.update!()
+    redirect conn, to: todo_path(conn, :show, todo.id)
   end
 
   def delete(conn, %{"id" => id}) do
